@@ -1,0 +1,48 @@
+// Medialand home hero section =====
+
+.medialand-hero {
+}
+.hero {
+  @include adaptiveValue("padding-top", 130, 50);
+  padding-bottom: 64px;
+  @media (max-width: em($mobile)) {
+    padding-bottom: 69px;
+  }
+  &__container {
+    max-width: 1210px;
+    margin: 0 auto;
+  }
+
+  &__info {
+    margin-bottom: 47px;
+    padding-left: 45px;
+    @media (max-width: $tablet) {
+      padding-left: 20px;
+    }
+    @media (max-width: $mobile) {
+      margin-bottom: 40px;
+      padding-left: 0;
+    }
+  }
+
+  &__content {
+  }
+
+  &__image-ibg {
+    padding-bottom: percent(809, 1210);
+  }
+}
+.info-hero {
+  &__title {
+    margin-bottom: 25px;
+    @include adaptiveValue("font-size", 59, 30);
+    @include adaptiveValue("font-size", 70, 39);
+    font-weight: 700;
+    @media (max-width: em($mobile)) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+  }
+}
