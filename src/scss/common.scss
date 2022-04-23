@@ -1,4 +1,35 @@
 .text {
-  @include adaptiveValue("font-size",27 ,16 );
-  @include adaptiveValue("line-height",37 ,28 );
+  @include adaptiveValue("font-size", 27, 16);
+  @include adaptiveValue("line-height", 37, 28);
+}
+
+.title {
+  color: #fff;
+  font-weight: 700;
+  @include adaptiveValue("font-size", 43, 26);
+  @include adaptiveValue("line-height", 59, 36);
+}
+
+.subtitle {
+  color: #fff;
+  font-weight: 700;
+  @include adaptiveValue("font-size", 26, 20);
+  @include adaptiveValue("line-height", 37, 28);
+  &_yellow {
+    color: $mainYellow;
+  }
+}
+
+.info-block {
+  & > *:not(:last-child) {
+    margin-bottom: 25px;
+  }
+  &__title {
+  }
+
+  &__text {
+  }
+
+  &__button {
+  }
 }

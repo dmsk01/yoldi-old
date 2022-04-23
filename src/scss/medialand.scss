@@ -46,3 +46,110 @@
   &__text {
   }
 }
+
+// Medialand home about section =====
+
+.medialand-about {
+  &__container {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  &__info {
+    margin-bottom: 40px;
+    max-width: 842px;
+    width: 100%;
+  }
+
+  &__target {
+    @include adaptiveValue("margin-bottom", 150, 80);
+  }
+
+  &__task {
+    max-width: 840px;
+    width: 100%;
+    margin-bottom: 60px;
+    @media (max-width: $mobile) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__requirements {
+    max-width: 820px;
+    width: 100%;
+  }
+}
+
+.target-about {
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__column {
+    &:first-child {
+      flex: 0 1 420px;
+      margin-right: 10px;
+      @media (max-width: $mobile) {
+        flex: 1 1 100%;
+        margin-bottom: 40px;
+        margin-right: 0;
+      }
+    }
+    &:last-child {
+      flex: 0 1 620px;
+      @media (max-width: $mobile) {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  &__automatisation {
+  }
+
+  &__heading {
+    margin-bottom: 10px;
+  }
+
+  &__list {
+  }
+
+  &__aim {
+    background: $mainGrey;
+    padding: 32px 54px 26px;
+    @media (max-width: $mobile) {
+      padding: 20px 10px;
+    }
+  }
+}
+
+.requirements-about {
+  &__heading {
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    counter-reset: section;
+  }
+
+  &__item {
+    padding-left: 45px;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-right: 20px;
+      content: counter(section, decimal) ".";
+      counter-increment: section;
+    }
+  }
+}
