@@ -1,7 +1,8 @@
 // Medialand home hero section =====
-
-.medialand-hero {
+.medialand-home {
+  margin-bottom: 120px;
 }
+
 .hero {
   @include adaptiveValue("padding-top", 130, 50);
   padding-bottom: 64px;
@@ -165,6 +166,7 @@
 // Medialand home page section composition =====
 
 .medialand-composition {
+  @include adaptiveValue("margin-bottom", 150, 80);
   &__container {
   }
 }
