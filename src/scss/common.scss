@@ -31,5 +31,68 @@
   }
 
   &__button {
+    margin-left: 16px;
+    width: 100%;
+    @media (max-width: $pc) {
+      max-width: 50%;
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+    }
+    @media (max-width: $mobileSmall) {
+      margin-left: 10px;
+    }
+  }
+}
+
+// Button =====
+
+.button {
+  display: inline-block;
+  text-align: center;
+  &_soaring {
+    color: $mainDark;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: calc(100% - 16px);
+      height: 100%;
+      background: $mainYellow;
+      transform: translate(-16px, 16px);
+      transition: transform 0.3s ease 0s;
+      @media (max-width: $mobileSmall) {
+        width: calc(100% - 10px);
+        transform: translate(-10px, 10px);
+      }
+    }
+    span {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: calc(100% - 16px);
+      height: 100%;
+      background: #fff;
+      font-size: 21px;
+      line-height: math.div(32, 21);
+      padding: 25px 45px;
+      transition: transform 0.3s ease 0s;
+      @media (max-width: $mobileSmall) {
+        font-size: 17px;
+        padding: 10px 25px;
+        width: calc(100% - 10px);
+      }
+    }
+    &:active {
+      &::after {
+        transform: translate(-8px, 8px);
+      }
+      span {
+        transform: translate(-2px, 2px);
+      }
+    }
   }
 }
