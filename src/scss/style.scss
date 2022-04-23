@@ -21,6 +21,7 @@ $fontSize: rem(14); // где 14(px) - размер шрифта по умолч
 $mainColor: #000; // Цвет шрифта по умолчанию
 $mainDark: #2f2f39;
 $mainGrey: #505060;
+$lightGrey: #D2D2D2;;
 $mainYellow: #feff55;
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
@@ -57,26 +58,38 @@ body {
   color: #fff;
   // Скролл заблокирован
   position: relative;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    z-index: -1;
+  }
   &#medialand-home {
     &::before {
-      content: "";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
       background-image: linear-gradient(
           180deg,
           rgba(126, 126, 153, 0.2) 0%,
           #2f2f39 96.37%
         ),
         url("@img/medialand/home/hero/bg.jpg");
-      background-repeat: no-repeat;
-      background-position: top;
-      background-size: cover;
-      z-index: -1;
+    }
+  }
+  &#medialand-search-and-analitics {
+    &::before {
+      background-image: linear-gradient(
+          180deg,
+          rgba(126, 126, 153, 0.2) 0%,
+          #2f2f39 96.37%
+        ),
+        url("@img/medialand/search-and-analitics/hero/bg.jpg");
     }
   }
   .lock & {

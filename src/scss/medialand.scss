@@ -13,7 +13,6 @@
     max-width: 1210px;
     margin: 0 auto;
   }
-
   &__info {
     margin-bottom: 47px;
     padding-left: 45px;
@@ -223,6 +222,30 @@
       height: 100%;
       object-fit: contain;
     }
+  }
+
+  &__info {
+  }
+}
+
+// Search and analitics page =========
+
+.hero-search {
+  @include adaptiveValue("padding-top", 130, 50);
+  padding-bottom: 64px;
+  @media (max-width: em($mobile)) {
+    padding-bottom: 69px;
+  }
+  &__container {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__breadcrumps {
+    max-width: 1272px;
+    margin: 0 auto;
+    @include adaptiveValue("margin-bottom", 55, 25);
   }
 
   &__info {
