@@ -249,5 +249,59 @@
   }
 
   &__info {
+    max-width: 840px;
+    width: 100%;
+  }
+}
+
+// Medialand search & analitycs page - section about =====
+.medialand-search-about {
+  &__container {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__target {
+    max-width: 840px;
+    width: 100%;
+    @include adaptiveValue("margin-bottom", 159, 77);
+  }
+
+  &__subject {
+    @include adaptiveValue("margin-bottom", 155, 94);
+  }
+  &__audience {
+    max-width: 840px;
+    width: 100%;
+    @include adaptiveValue("margin-bottom", 78, 33);
+  }
+}
+
+.subject-search {
+  &__title {
+    margin-bottom: 30px;
+    @media (max-width: $mobile) {
+      margin-bottom: 58px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    @media (max-width: $tablet) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.audience-search {
+  &__info {
   }
 }

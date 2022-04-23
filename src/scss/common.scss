@@ -172,3 +172,10 @@
     }
   }
 }
+
+// Grey tag ======
+.item-tag {
+  display: inline-block;
+  padding: 6px 10px;
+  background: $mainGrey;
+}
