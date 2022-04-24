@@ -290,6 +290,10 @@
   &__competitors {
     @include adaptiveValue("margin-bottom", 210, 90);
   }
+
+  &__avantages {
+    @include adaptiveValue("margin-bottom", 170, 100);
+  }
 }
 
 .subject-search {
@@ -613,6 +617,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    @include adaptiveValue("margin-bottom", 165, 50);
     @media (max-width: $tablet) {
       flex-direction: column-reverse;
     }
@@ -662,5 +667,209 @@
       font-size: 16px;
       line-height: math.div(28, 16);
     }
+  }
+}
+
+.search-analysis {
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    flex: 0 1 560px;
+    max-width: 560px;
+    width: 100%;
+    margin-right: 20px;
+    @media (max-width: $tablet) {
+      flex: 1 1 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+      max-width: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+  }
+
+  &__points {
+  }
+}
+.search-points {
+  display: flex;
+  align-items: start;
+  margin: 0 -20px;
+  @media (max-width: $mobileSmall) {
+    flex-direction: column;
+    margin: 0;
+  }
+  &__list {
+    padding: 0 20px;
+    @media (max-width: $mobileSmall) {
+      margin-bottom: 10px;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// Medialand search page advantages section ====
+
+.search-advantages {
+  &__intro {
+    margin-bottom: 60px;
+    @media (max-width: $mobile) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__container {
+  }
+
+  &__list {
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -5px;
+    @media (max-width: $tablet) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @media (max-width: $mobile) {
+      margin: 0;
+    }
+  }
+
+  &__item {
+    flex: 0 1 460px;
+    padding: 0 5px;
+    @media (max-width: $tablet) {
+      flex: 0 1 50%;
+      margin-bottom: 10px;
+    }
+    @media (max-width: $mobile) {
+      flex: 1 1 100%;
+      padding: 0;
+    }
+  }
+}
+
+.item-advantages {
+  &__body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #40404d;
+    padding: 30px 30px 45px;
+    @media (max-width: $mobileSmall) {
+      padding: 20px 10px;
+    }
+  }
+
+  &__image {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 35px;
+    @media (max-width: $mobile) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    white-space: nowrap;
+    @media (max-width: $pc) {
+      white-space: pre-wrap;
+    }
+  }
+
+  &__text {
+    font-size: 17px;
+    line-height: math.div(29, 17);
+    @media (max-width: $mobile) {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+}
+
+.intro-advantages {
+  &__container {
+    max-width: 1120px;
+  }
+}
+
+// Medialand search page context interview with user section =====
+
+.medialand-search-about {
+  &__interview {
+  }
+}
+.search-interview {
+  &__intro {
+    @include adaptiveValue("margin-bottom", 110, 45);
+  }
+
+  &__container {
+    max-width: 1120px;
+  }
+
+  &__info-block {
+    max-width: 840px;
+    width: 100%;
+    margin-bottom: 65px;
+    @media (max-width: $mobile) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+  }
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    @media (max-width: $tablet) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__column {
+    flex: 0 1 460px;
+    &:first-child {
+      @include adaptiveValue("margin-right", 80, 0);
+    }
+    @media (max-width: $tablet) {
+      flex: 1 1 100%;
+      &:first-child {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__body {
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__text {
   }
 }
