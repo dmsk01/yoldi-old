@@ -277,6 +277,15 @@
   }
 
   &__groups {
+    @include adaptiveValue("margin-bottom", 160, 80);
+  }
+
+  &__portraits {
+    @include adaptiveValue("margin-bottom", 180, 90);
+  }
+
+  &__scenario {
+    @include adaptiveValue("margin-bottom", 210, 90);
   }
 }
 
@@ -315,7 +324,6 @@
 }
 
 .client-groups {
-  @include adaptiveValue("margin-bottom", 160, 80);
   &__container {
     overflow-x: scroll;
   }
@@ -387,6 +395,62 @@
     @media (max-width: $mobile) {
       max-width: none;
       width: 260%;
+    }
+  }
+}
+
+// Medialand search page scenario section ======
+
+.search-scenario {
+  &__container {
+    max-width: 1120px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__info-block {
+    flex: 0 1 700px;
+    max-width: 700px;
+    width: 100%;
+    margin-right: 15px;
+    @media (max-width: $tablet) {
+      margin-right: 0;
+      margin-bottom: 45px;
+      flex: 1 1 100%;
+      max-width: none;
+    }
+  }
+
+  &__aside {
+    flex: 0 1 250px;
+    @media (max-width: $tablet) {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.aside-scenario {
+  padding-top: 80px;
+  @media (max-width: $tablet) {
+    padding-top: 0;
+  }
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 21px;
+    line-height: math.div(32, 21);
+    @media (max-width: $mobileSmall) {
+      font-size: 14px;
+      line-height: math.div(24, 14);
     }
   }
 }
