@@ -149,7 +149,6 @@
 // Breadcrumps ======
 
 .breadcrumps {
-  padding: 0 16px;
   &__inner {
   }
 
@@ -170,6 +169,11 @@
       background: url("@img/icons/arrow-left.svg") center no-repeat;
       z-index: 1;
     }
+    @media (max-width: $mobile) {
+      &::before {
+        transform: translate(0, 5px);
+      }
+    }
   }
 }
 
@@ -178,4 +182,22 @@
   display: inline-block;
   padding: 6px 10px;
   background: $mainGrey;
+}
+
+// Hide scroll thumb & track ===
+
+.hide-scroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: none !important;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 1px !important;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
 }
