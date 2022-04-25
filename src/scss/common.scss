@@ -1,5 +1,4 @@
 .text {
-  color: #fff;
   @include adaptiveValue("font-size", 27, 16);
   @include adaptiveValue("line-height", 37, 28);
   &_small {
