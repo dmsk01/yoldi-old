@@ -3,6 +3,15 @@
   margin-bottom: 120px;
 }
 
+.medialand-search-and-analitics {
+  &__project-request {
+    @include adaptiveValue("margin-bottom", 200, 115);
+  }
+  &__more-about-project {
+    @include adaptiveValue("margin-bottom", 160, 115);
+  }
+}
+
 .hero {
   @include adaptiveValue("padding-top", 130, 50);
   padding-bottom: 64px;
