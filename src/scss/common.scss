@@ -26,6 +26,10 @@
   &_yellow {
     color: $mainYellow;
   }
+  &_noshrink {
+    font-size: 26px;
+    line-height: math.div(37, 26);
+  }
 }
 
 .info-block {

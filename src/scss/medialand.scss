@@ -1296,6 +1296,10 @@
   &__structure {
     @include adaptiveValue("margin-bottom", 180, 80);
   }
+
+  &__visual-style {
+    @include adaptiveValue("margin-bottom", 115, 80);
+  }
 }
 .interactiv-protocol {
   &__info-block {
@@ -1417,6 +1421,9 @@
 .item-schema {
   padding: 30px;
   background: #40404d;
+  @media (max-width: $tablet) {
+    padding: 20px;
+  }
   &__body {
   }
 
@@ -1435,6 +1442,115 @@
     }
     &:not(:last-child) {
       margin-bottom: 10px;
+    }
+  }
+}
+
+// Medialand proto page visual style section =====
+
+.proto-visual-style {
+  &__intro {
+    @include adaptiveValue("margin-bottom", 140, 40);
+  }
+
+  &__content {
+  }
+}
+.visual-style-intro {
+  &__container {
+    max-width: 1120px;
+  }
+
+  &__info-block {
+    @include adaptiveValue("margin-bottom", 85, 40);
+  }
+
+  &__descr {
+    @include adaptiveValue("margin-bottom", 85, 40);
+  }
+}
+
+.advantages-style {
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    @media (max-width: $tablet) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    @media (max-width: $tablet) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.descr-style-intro {
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.visual-style-content {
+  &__container {
+    max-width: 1280px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -10px;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 140, 40);
+    }
+    &_reverse {
+      flex-direction: row-reverse;
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      margin: 0;
+    }
+  }
+
+  &__image {
+    padding: 0 10px;
+    flex: 0 1 670px;
+    max-width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    @media (max-width: $mobile) {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__info {
+    padding: 0 10px;
+    flex: 0 1 475px;
+    max-width: 475px;
+    width: 100%;
+    @media (max-width: $mobile) {
+      flex: 1 1 100%;
+      max-width: none;
+      padding: 0;
+      margin-bottom: 20px;
     }
   }
 }
