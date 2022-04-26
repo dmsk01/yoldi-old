@@ -1286,3 +1286,155 @@
   &__text {
   }
 }
+
+// Medialand proto page Interactiv protocol section ====
+
+.medialand-proto {
+  &__interactiv-protocol {
+    margin-bottom: 160px;
+  }
+  &__structure {
+    @include adaptiveValue("margin-bottom", 180, 80);
+  }
+}
+.interactiv-protocol {
+  &__info-block {
+    margin-bottom: 67px;
+    @media (max-width: $mobile) {
+      margin-bottom: 26px;
+    }
+  }
+
+  &__container {
+    max-width: 1120px;
+  }
+
+  &__video-block {
+    margin-bottom: 80px;
+    @media (max-width: $mobile) {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__text-block {
+    margin-bottom: 35px;
+  }
+
+  &__conainer {
+  }
+
+  &__row {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    max-width: 707px;
+    width: 100%;
+    margin-right: 15px;
+    @media (max-width: $mobile) {
+      margin-right: 0;
+      margin-bottom: 30px;
+      max-width: none;
+    }
+  }
+
+  &__aside {
+    flex: 0 1 355px;
+    padding-left: 28px;
+    border-left: 3px solid $mainYellow;
+    color: #d2d2d2;
+    @media (max-width: $mobile) {
+      flex: 1 1 100%;
+      padding-left: 25px;
+    }
+  }
+}
+
+.protocol-image {
+  &__container {
+    max-width: 1120px;
+  }
+
+  &__body {
+    max-width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+// Medialand proto page schema block =====
+
+.structure-info {
+  margin-bottom: 78px;
+  @media (max-width: $mobile) {
+    margin-bottom: 43px;
+  }
+  &__container {
+    max-width: 1120px;
+  }
+  &__info-block {
+    max-width: 840px;
+    width: 100%;
+  }
+}
+
+.schema-proto {
+  &__container {
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $tablet) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__column {
+    flex: 0 1 33.333%;
+    @media (max-width: $tablet) {
+      flex: 0 1 100%;
+    }
+    &:not(:last-child) {
+      margin-right: 35px;
+      @media (max-width: $tablet) {
+        margin-right: 0px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.item-schema {
+  padding: 30px;
+  background: #40404d;
+  &__body {
+  }
+
+  &__title {
+    margin-bottom: 33px;
+  }
+
+  &__blocks {
+    width: 100%;
+  }
+
+  &__item {
+    width: 100%;
+    & > * {
+      width: 100%;
+    }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
