@@ -102,6 +102,16 @@ body {
         url("@img/medialand/proto/hero/bg.png");
     }
   }
+  &#medialand-corporate {
+    &::before {
+      background-image: linear-gradient(
+          180deg,
+          rgba(126, 126, 153, 0.2) 0%,
+          #2f2f39 96.37%
+        ),
+        url("@img/medialand/corporate/hero/bg.jpg");
+    }
+  }
   .lock & {
     overflow: hidden;
     touch-action: none;
@@ -187,3 +197,4 @@ body {
 // Подключение стилей отдельных страниц
 @import "home";
 @import "medialand";
+// @import "libs/swiper.scss";
