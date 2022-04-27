@@ -48,7 +48,7 @@
   &__title {
     margin-bottom: 25px;
     @include adaptiveValue("font-size", 59, 30);
-    @include adaptiveValue("font-size", 70, 39);
+    @include adaptiveValue("line-height", 70, 39);
     font-weight: 700;
     @media (max-width: em($mobile)) {
       margin-bottom: 15px;
@@ -1735,7 +1735,7 @@
   &__intro {
     margin-bottom: 90px;
     @media (max-width: $mobile) {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
   }
 
@@ -1746,9 +1746,6 @@
   &__info-block {
     max-width: 840px;
     width: 100%;
-  }
-
-  &__content {
   }
 
   &__image {
@@ -1885,7 +1882,7 @@
 
 // Medialand corporate page Main-page section =====
 .corporate-hero {
-  @include adaptiveValue("margin-bottom", 105, 80);
+  @include adaptiveValue("margin-bottom", 105, 15);
 }
 
 .medialand-corporate {
@@ -2009,10 +2006,6 @@
 
 // Servers catalog slider =====
 
-.corporate-servers-catalog {
-  &__slider {
-  }
-}
 .servers-catalog {
   &__slider {
     padding-left: percent(144, 1680);
@@ -2027,7 +2020,6 @@
   }
 
   &__slide {
-    min-height: 100%;
     width: 100%;
     @media (max-width: $mobile) {
       padding: 0 16px;
@@ -2058,8 +2050,6 @@
   &__paggination {
     flex: 0 0 215px;
   }
-}
-.swiper {
 }
 
 .swiper-slide {
@@ -2106,6 +2096,61 @@
       background: #40404d;
       transform: translate(54px, -50%);
       z-index: -1;
+    }
+  }
+}
+
+// Corporate page admin section ====
+.medialand-corporate {
+  &__admin {
+    @include adaptiveValue("margin-bottom", 190, 80);
+  }
+  &__composition-item {
+    @include adaptiveValue("margin-bottom", 110, 80);
+  }
+}
+.corporate-admin {
+  &__intro {
+    margin-bottom: 75px;
+    @media (max-width: $mobile) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__container {
+    max-width: 1120px;
+    &_wide {
+      max-width: 1400px;
+    }
+  }
+
+  &__info-block {
+  }
+
+  &__content {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 90, 50);
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    &_desktop {
+      display: none;
+      @media (min-width: $mobile) {
+        display: block;
+      }
+    }
+    &_mobile {
+      display: block;
+      @media (min-width: $mobile) {
+        display: none;
+      }
     }
   }
 }
