@@ -1174,11 +1174,6 @@
   }
 }
 
-.medialand-proto {
-  &__makets {
-  }
-}
-
 .makets-proto {
   &__container {
     max-width: 1120px;
@@ -1306,6 +1301,20 @@
   }
   &__color-pallete {
     @include adaptiveValue("margin-bottom", 190, 80);
+  }
+
+  &__images-set {
+    @include adaptiveValue("margin-bottom", 170, 80);
+  }
+  &__icons-set {
+    @include adaptiveValue("margin-bottom", 170, 80);
+  }
+
+  &__styleguide {
+    @include adaptiveValue("margin-bottom", 110, 80);
+  }
+  &__composition-item {
+    @include adaptiveValue("margin-bottom", 170, 80);
   }
 }
 .interactiv-protocol {
@@ -1667,13 +1676,18 @@
     flex: 0 1 percent(600, 1120);
     max-width: 600px;
     width: 100%;
-    @include adaptiveValue("margin-right", 100, 0);
+    margin-right: 100px;
+    @media (max-width: $pc) {
+      margin-right: 50px;
+    }
+    @media (max-width: $tablet) {
+      margin-right: 30px;
+    }
     @media (max-width: $mobile) {
       margin-right: 0;
     }
   }
   &__image {
-    margin-left: auto;
     max-width: 100%;
     width: 100%;
     img {
@@ -1681,16 +1695,17 @@
       max-height: 100%;
       object-fit: contain;
     }
-    &_cropped {
-      padding-left: 66%;
-      @media (max-width: $mobile) {
-        padding-left: 0;
-        padding-right: 66.6%;
+    &_desktop {
+      display: none;
+      @media (min-width: $mobile) {
+        display: block;
       }
     }
-    @media (max-width: $mobile) {
-      margin-left: 0;
-      margin-right: auto;
+    &_mobile {
+      display: block;
+      @media (min-width: $mobile) {
+        display: none;
+      }
     }
   }
 
@@ -1711,5 +1726,159 @@
 
   &__subtitle {
     margin-bottom: 10px;
+  }
+}
+
+// Medialand proto page Images section =====
+
+.proto-images-set {
+  &__intro {
+    margin-bottom: 90px;
+    @media (max-width: $mobile) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__container {
+    max-width: 1120px;
+  }
+
+  &__info-block {
+    max-width: 840px;
+    width: 100%;
+  }
+
+  &__content {
+  }
+
+  &__image {
+    max-width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    &_desktop {
+      display: none;
+      @media (min-width: $mobile) {
+        display: block;
+      }
+    }
+    &_mobile {
+      display: block;
+      @media (min-width: $mobile) {
+        display: none;
+      }
+    }
+  }
+}
+
+// Proto page Icons section =====
+
+.proto-icons-set {
+  &__intro {
+  }
+
+  &__container {
+    max-width: 1120px;
+  }
+
+  &__info-block {
+    max-width: 840px;
+    width: 100%;
+    margin-bottom: 70px;
+    @media (max-width: $mobile) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__content {
+    max-width: 1342px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  &__inner {
+    display: flex;
+    margin: 0 -27px;
+    @media (max-width: $tablet) {
+      margin: 0 -10px;
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    flex: 0 1 50%;
+    padding: 0 27px;
+    height: 100%;
+    @media (max-width: $tablet) {
+      padding: 0 10px;
+    }
+    @media (max-width: $mobile) {
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.item-icon-set {
+  height: 100%;
+  &__image {
+    max-width: 100%;
+    margin-bottom: 54px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    @media (max-width: $mobile) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    flex: 1 1 auto;
+  }
+}
+
+// Medialand proto page Styleguide section =====
+
+.proto-styleguide {
+  &__intro {
+    margin-bottom: 40px;
+  }
+
+  &__container {
+    max-width: 1120px;
+  }
+
+  &__info-block {
+    max-width: 840px;
+    width: 100%;
+  }
+
+  &__content {
+  }
+
+  &__image {
+    max-width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 }

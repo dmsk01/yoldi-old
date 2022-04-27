@@ -86,10 +86,10 @@
     }
     &:active {
       &::after {
-        transform: translate(-8px, 8px);
+        transform: translate(-9px, 9px);
       }
       span {
-        transform: translate(-2px, 2px);
+        transform: translate(-3px, 3px);
       }
     }
   }
