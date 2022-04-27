@@ -17,7 +17,7 @@ EffectFade, Lazy, Manipulation
 
 // Стили Swiper
 // Базовые стили
-import "../../scss/base/swiper.scss";
+// import "../../scss/base/swiper.scss";
 // Полный набор стилей из scss/libs/swiper.scss
 // import "../../scss/libs/swiper.scss";
 // Полный набор стилей из node_modules
@@ -25,24 +25,25 @@ import "../../scss/base/swiper.scss";
 
 // Инициализация слайдеров
 function initSliders() {
+  // Перечень слайдеров
+  // Проверяем, есть ли слайдер на стронице
   if (document.querySelector(".swiper")) {
-    const enableSwiper = function () {
-      new Swiper(".swiper", {
-        modules: [Navigation, Scrollbar],
-        observer: true,
-        observeParents: true,
-        slidesPerView: 2.5,
-        spaceBetween: 70,
-        autoHeight: false,
-        speed: 800,
+    new Swiper(".swiper", {
+      modules: [Navigation, Scrollbar],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 2.5,
+      spaceBetween: 70,
+      autoHeight: false,
+      speed: 800,
 
-        //touchRatio: 0,
-        //simulateTouch: false,
-        // loop: true,
-        //preloadImages: false,
-        //lazy: true,
+      //touchRatio: 0,
+      //simulateTouch: false,
+      //loop: true,
+      //preloadImages: false,
+      //lazy: true,
 
-        /*
+      /*
 			// Эффекты
 			effect: 'fade',
 			autoplay: {
@@ -51,99 +52,88 @@ function initSliders() {
 			},
 			*/
 
-        // Пагинация
-        /*
+      // Пагинация
+      /*
 			pagination: {
 				el: '.swiper-pagination',
 				clickable: true,
 			},
 			*/
 
-        // Скроллбар
+      // Скроллбар
 
-        scrollbar: {
-          el: ".swiper-scrollbar",
-          draggable: true,
-          dragSize: 400,
+      scrollbar: {
+        el: ".servers-catalog__scroll .swiper-scrollbar",
+        draggable: true,
+        dragSize: 400,
+      },
+
+      // Кнопки "влево/вправо"
+      navigation: {
+        prevEl: ".paggination-servers__prev",
+        nextEl: ".paggination-servers__next",
+      },
+
+      // Брейкпоинты
+
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
         },
-
-        // Кнопки "влево/вправо"
-        navigation: {
-          prevEl: ".paggination-servers__prev",
-          nextEl: ".paggination-servers__next",
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
         },
-
-        // Брейкпоинты
-
-        breakpoints: {
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            autoHeight: true,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          992: {
-            slidesPerView: 2.5,
-            spaceBetween: 70,
-          },
+        992: {
+          slidesPerView: 2.5,
+          spaceBetween: 70,
         },
+      },
 
-        // События
-        on: {},
-      });
-    };
-
-    const breakpoint = window.matchMedia("(min-width:767.98px)");
-    const breakpointChecker = function () {
-      if (breakpoint.matches === false) {
-        if (mySwiper !== undefined) mySwiper.destroy(true, true);
-        return;
-      } else if (breakpoint.matches === true) {
-        return enableSwiper();
-      }
-    };
-    breakpoint.addEventListener("change", breakpointChecker);
-    breakpointChecker();
+      // События
+      on: {},
+    });
   }
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
-// function initSlidersScroll() {
-//   bildSliders();
+function initSlidersScroll() {
+  // Добавление классов слайдера
+  // при необходимости отключить
+  bildSliders();
 
-//   let sliderScrollItems = document.querySelectorAll(".swiper_scroll");
-//   if (sliderScrollItems.length > 0) {
-//     for (let index = 0; index < sliderScrollItems.length; index++) {
-//       const sliderScrollItem = sliderScrollItems[index];
-//       const sliderScrollBar =
-//         sliderScrollItem.querySelector(".swiper-scrollbar");
-//       const sliderScroll = new Swiper(sliderScrollItem, {
-//         observer: true,
-//         observeParents: true,
-//         direction: "vertical",
-//         slidesPerView: "auto",
-//         freeMode: {
-//           enabled: true,
-//         },
-//         scrollbar: {
-//           el: sliderScrollBar,
-//           draggable: true,
-//           snapOnRelease: false,
-//         },
-//         mousewheel: {
-//           releaseOnEdges: true,
-//         },
-//       });
-//       sliderScroll.scrollbar.updateSize();
-//     }
-//   }
-// }
+  let sliderScrollItems = document.querySelectorAll(".swiper_scroll");
+  if (sliderScrollItems.length > 0) {
+    for (let index = 0; index < sliderScrollItems.length; index++) {
+      const sliderScrollItem = sliderScrollItems[index];
+      const sliderScrollBar =
+        sliderScrollItem.querySelector(".swiper-scrollbar");
+      const sliderScroll = new Swiper(sliderScrollItem, {
+        observer: true,
+        observeParents: true,
+        direction: "vertical",
+        slidesPerView: "auto",
+        freeMode: {
+          enabled: true,
+        },
+        scrollbar: {
+          el: sliderScrollBar,
+          draggable: true,
+          snapOnRelease: false,
+        },
+        mousewheel: {
+          releaseOnEdges: true,
+        },
+      });
+      sliderScroll.scrollbar.updateSize();
+    }
+  }
+}
 
-window.addEventListener("load", function (e) {
-  // Запуск инициализации слайдеров
-  initSliders();
+window.addEventListener("load", function () {
+  if (window.innerWidth >= 767.98) {
+    initSliders();
+  }
   // Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
-  // initSlidersScroll();
+  //initSlidersScroll();
 });

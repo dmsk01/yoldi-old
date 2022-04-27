@@ -2023,11 +2023,12 @@
 
   &__wrapper {
     @media (max-width: $mobile) {
-      flex-direction: column;
     }
   }
 
   &__slide {
+    min-height: 100%;
+    width: 100%;
     @media (max-width: $mobile) {
       padding: 0 16px;
 
@@ -2060,8 +2061,7 @@
 }
 .swiper {
 }
-.swiper-wrapper {
-}
+
 .swiper-slide {
   &__image {
     border-radius: 5px;
