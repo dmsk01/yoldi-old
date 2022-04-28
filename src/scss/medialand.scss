@@ -2154,3 +2154,12 @@
     }
   }
 }
+
+// Medialand controlpanel page Creation section =====
+
+.control-panel-img {
+  margin-top: 120px;
+  @media (max-width: $mobile) {
+    margin-top: 40px;
+  }
+}
