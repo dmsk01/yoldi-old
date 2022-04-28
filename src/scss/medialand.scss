@@ -2169,14 +2169,47 @@
   @media (max-width: $mobile) {
     margin-bottom: 80px;
   }
+  &_reverse {
+    .accounts-control__body {
+      flex-direction: row-reverse;
+      @media (max-width: $mobile) {
+        margin-bottom: 0;
+        flex-direction: column-reverse;
+      }
+    }
+    .accounts-control__column {
+      &:first-child {
+        flex: 0 1 760px;
+        @media (max-width: $mobile) {
+          flex: 1 1 100%;
+        }
+      }
+      &:last-child {
+        flex: 0 0 335px;
+        margin-left: 0;
+        @include adaptiveValue("margin-right", 90, 0);
+        @media (max-width: $mobile) {
+          flex: 1 1 100%;
+          margin-left: 0;
+          margin-bottom: 35px;
+        }
+      }
+    }
+  }
+
   &__body {
     display: flex;
     align-items: center;
     margin-bottom: 160px;
+    @media (max-width: $pc) {
+      margin-bottom: 120px;
+    }
+    @media (max-width: $tablet) {
+      margin-bottom: 80px;
+    }
     @media (max-width: $mobile) {
       flex-direction: column-reverse;
       align-items: flex-start;
-      margin-bottom: 80px;
     }
   }
 
@@ -2224,7 +2257,9 @@
 
 .medialand-control-panel {
   &__grid {
-    margin-bottom: 180px;
+    @media (max-width: $pc) {
+      margin-bottom: 180px;
+    }
     @media (max-width: $tablet) {
       margin-bottom: 80px;
     }
@@ -2250,11 +2285,6 @@
     }
     @media (max-width: $mobile) {
       margin-bottom: 60px;
-    }
-    &_desktop {
-    }
-
-    &_mobile {
     }
   }
 
