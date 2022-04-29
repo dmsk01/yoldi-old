@@ -3,12 +3,20 @@
   margin-bottom: 120px;
 }
 
+.medialand-hero {
+  margin-bottom: 70px;
+}
+
 .search-and-analitics {
   margin-bottom: 64px;
 }
 
 .medialand-search-and-analitics {
   &__project-request {
+    margin-bottom: 200px;
+    @media (max-width: $mobile) {
+      margin-bottom: 115px;
+    }
     @include adaptiveValue("margin-bottom", 200, 115);
   }
   &__more-about-project {
@@ -182,13 +190,12 @@
   }
 }
 .composition-item {
-  &:not(:last-child) {
-    @include adaptiveValue("margin-bottom", 150, 80);
-  }
+  @include adaptiveValue("margin-bottom", 150, 80);
+
   &_reverse {
     .composition-item__inner {
       flex-direction: row-reverse;
-      @media (max-width: $pc) {
+      @media (max-width: 930px) {
         flex-direction: column-reverse;
         align-items: center;
       }
@@ -198,7 +205,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media (max-width: $pc) {
+    @media (max-width: 930px) {
       flex-direction: column-reverse;
       align-items: center;
     }
@@ -207,13 +214,16 @@
   &__column {
     &:first-child {
       margin-right: 15px;
-      @media (max-width: $pc) {
+      @media (max-width: 930px) {
         margin-right: 0;
       }
     }
     &_image {
       flex: 0 1 840px;
       @media (max-width: $pc) {
+        flex: 0 1 50%;
+      }
+      @media (max-width: 930px) {
         flex: 1 1 100%;
       }
     }
@@ -221,8 +231,13 @@
     &_info {
       flex: 0 1 450px;
       @media (max-width: $pc) {
+        padding: 0 16px;
+        flex: 0 1 50%;
+      }
+      @media (max-width: 930px) {
         flex: 1 1 100%;
-        margin-bottom: 44px;
+        padding: 0;
+        @include adaptiveValue("margin-bottom", 90, 44);
       }
     }
   }
@@ -671,6 +686,7 @@
     font-size: 26px;
     line-height: math.div(37, 26);
     margin-bottom: 10px;
+    font-weight: 700;
   }
 
   &__text {
@@ -810,7 +826,7 @@
     margin-bottom: 10px;
     white-space: nowrap;
     @media (max-width: $pc) {
-      white-space: pre-wrap;
+      white-space: unset;
     }
   }
 
@@ -868,7 +884,7 @@
   &__column {
     flex: 0 1 460px;
     &:first-child {
-      @include adaptiveValue("margin-right", 80, 0);
+      margin-right: 80px;
     }
     @media (max-width: $tablet) {
       flex: 1 1 100%;
@@ -1347,12 +1363,13 @@
     display: flex;
     justify-content: start;
     align-items: flex-start;
-    @media (max-width: $tablet) {
+    @media (max-width: $mobile) {
       flex-direction: column;
     }
   }
 
   &__text {
+    flex: 0 1 percent(707, 1120);
     max-width: 707px;
     width: 100%;
     margin-right: 15px;
@@ -1482,6 +1499,8 @@
   }
 
   &__descr {
+    max-width: 840px;
+    width: 100%;
     @include adaptiveValue("margin-bottom", 85, 40);
   }
 }
@@ -1887,7 +1906,7 @@
 
 .medialand-corporate {
   &__main-page {
-    @include adaptiveValue("margin-bottom", 180, 80);
+    @include adaptiveValue("margin-bottom", 150, 80);
   }
 
   &__servers-catalog {
@@ -2103,7 +2122,7 @@
 // Corporate page admin section ====
 .medialand-corporate {
   &__admin {
-    @include adaptiveValue("margin-bottom", 190, 80);
+    @include adaptiveValue("margin-bottom", 150, 80);
   }
   &__composition-item {
     @include adaptiveValue("margin-bottom", 110, 80);
