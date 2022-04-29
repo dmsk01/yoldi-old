@@ -257,3 +257,17 @@ div[class*="__container_mobile"] {
     padding: 0 16px;
   }
 }
+
+// Vimeo styles ====
+
+.player.hide-controls-mode {
+  pointer-events: none;
+}
+.vp-sidedock {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.player .vp-controls {
+  display: none !important;
+}

@@ -1209,6 +1209,19 @@
 
 .video-proto {
   &__container {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      display: inline-block;
+      transform: translate(-50%, 0);
+      height: 2px;
+      width: calc(100% - 32px);
+      background: #333;
+      z-index: 1;
+    }
   }
 }
 
@@ -2199,18 +2212,17 @@
     .accounts-control__column {
       &:first-child {
         flex: 0 1 760px;
+        margin-left: 90px;
         @media (max-width: $mobile) {
+          margin-left: 0;
           flex: 1 1 100%;
         }
       }
       &:last-child {
         flex: 0 0 335px;
         margin-left: 0;
-        @include adaptiveValue("margin-right", 90, 0);
-        margin-left: 90px;
         @media (max-width: $mobile) {
           flex: 1 1 100%;
-          margin-left: 0;
           margin-bottom: 35px;
         }
       }
@@ -2242,7 +2254,7 @@
       align-self: center;
     }
     &:last-child {
-      @include adaptiveValue("margin-left", 90, 0);
+      margin-left: 90px;
       @media (max-width: $mobile) {
         margin-left: 0;
         margin-bottom: 35px;
