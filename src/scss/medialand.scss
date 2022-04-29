@@ -1874,7 +1874,7 @@
 
 .proto-styleguide {
   &__intro {
-    margin-bottom: 40px;
+    margin-bottom: 70px;
   }
 
   &__container {
@@ -2207,6 +2207,7 @@
         flex: 0 0 335px;
         margin-left: 0;
         @include adaptiveValue("margin-right", 90, 0);
+        margin-left: 90px;
         @media (max-width: $mobile) {
           flex: 1 1 100%;
           margin-left: 0;
@@ -2214,6 +2215,9 @@
         }
       }
     }
+  }
+  &_pullup {
+    margin-top: -70px;
   }
 
   &__body {
